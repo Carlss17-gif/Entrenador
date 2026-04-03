@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Acceso Entrenadores</title>
+
+  <link rel="stylesheet" href="auth.css">
+
+  <!-- Supabase -->
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+</head>
+
+<body class="auth-page">
+
+<!-- HEADER -->
+<div class="auth-header">
+  <img src="CarlsLogo.png" class="logo center">
+  <p class="sub">Acceso Entrenadores • Cero Tenedor</p>
+</div>
+
+<!-- CONTENIDO -->
+<div class="auth-container">
+  <div class="auth-card">
+    <h2>Panel de Entrenadores</h2>
+
+    <p class="info">
+      Acceso restringido únicamente a personal autorizado
+    </p>
+
+    <input id="email" type="email" placeholder="Correo electrónico">
+    <input id="password" type="password" placeholder="Contraseña">
+
+    <div class="auth-options">
+      <label><input type="checkbox"> Recordarme</label>
+    </div>
+
+    <button onclick="loginEntrenador()">Entrar</button>
+
+    <p id="error" style="color:#ff4d4d; margin-top:10px;"></p>
+
+    <p class="security">
+      Uso interno • Sistema de capacitación corporativa
+    </p>
+  </div>
+</div>
+
+<footer>
+  © 2026 Cero Tenedor<br>
+  Plataforma interna de capacitación
+</footer>
+
+<script src="supabase.js"></script>
+<script src="login.js"></script>
+
+</body>
+</html>

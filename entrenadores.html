@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Evaluaciones</title>
+  <link rel="stylesheet" href="Entrenadores.css">
+
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+  <div class="header">
+    <h1>Reporte de Evaluaciones</h1>
+  </div>
+
+  <main class="container">
+
+    <div class="card">
+      <div class="empleado-controls">
+        <select id="empleadoSelect">
+          <option value="">Selecciona empleado</option>
+        </select>
+        <select id="areaSelect">
+          <option value="">Área</option>
+        </select>
+        <button onclick="irAHabilidades()">Evaluación de Habilidades</button>
+        <button onclick="generarPDF()">Generar PDF</button>
+      </div>
+    </div>
+
+    <div class="graficas-wrapper">
+      <div class="card grafica-barra">
+        <h2>Resultados por área</h2>
+        <canvas id="graficaBarra"></canvas>
+      </div>
+      <div class="card grafica-pastel" id="cardPastel" style="display:none;">
+        <h2>Detalle del área</h2>
+        <canvas id="graficaPastel"></canvas>
+      </div>
+    </div>
+
+    <div class="card" id="zonaPDF">
+      <h2 id="tituloExamen"></h2>
+      <div id="detalleExamen"></div>
+    </div>
+
+  </main>
+
+  <script src="supabase.js"></script>
+  <script src="entrenadores.js"></script>
+  <script src="pdf.js"></script>
+
+</body>
+</html>

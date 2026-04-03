@@ -1,0 +1,201 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0a0a0a;
+  color: white;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background: #111;
+  padding: 15px;
+  text-align: center;
+  border-bottom: 2px solid #facc15;
+}
+
+.header h1 {
+  margin: 0;
+  color: #facc15;
+  font-size: 22px;
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.container {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: #111827;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  margin: 0 0 12px 0;
+  color: #f9fafb;
+  border-left: 4px solid #facc15;
+  padding-left: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* ===== CONTROLES (select + botón PDF) ===== */
+.empleado-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.empleado-controls select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #1f2937;
+  background: #000;
+  color: #e5e7eb;
+  font-size: 14px;
+  cursor: pointer;
+  min-width: 160px;
+  flex: 1;
+}
+
+.empleado-controls select:hover,
+.empleado-controls select:focus {
+  border-color: #facc15;
+  outline: none;
+  background: #111827;
+}
+
+#btnEvaluacion{
+  margin-left: auto;
+  padding: 8px 16px;
+  background: #411212;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+#btnGenerarPDF {
+  margin-left: auto;
+  padding: 8px 16px;
+  background: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+#btnGenerarPDF:hover {
+  background: #b91c1c;
+}
+
+/* ===== GRÁFICAS ===== */
+.graficas-wrapper {
+  display: flex;
+  gap: 15px;
+  align-items: stretch;
+}
+
+.grafica-barra {
+  flex: 7;
+}
+
+.grafica-pastel {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.grafica-barra canvas,
+.grafica-pastel canvas {
+  width: 100% !important;
+  height: 280px !important;
+  display: block;
+  margin-top: 8px;
+}
+
+/* ===== ZONA DETALLE EXAMEN ===== */
+.pregunta {
+  background: #020617;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-left: 4px solid #facc15;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.correcta {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.incorrecta {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+p {
+  margin: 4px 0;
+  color: #cbd5e1;
+  font-size: 14px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .header h1 {
+    font-size: 18px;
+  }
+
+  .empleado-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .empleado-controls select {
+    min-width: unset;
+    width: 100%;
+  }
+
+  #btnGenerarPDF {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .graficas-wrapper {
+    flex-direction: column;
+  }
+
+  .grafica-barra,
+  .grafica-pastel {
+    flex: none;
+    width: 100%;
+  }
+
+  .grafica-barra canvas,
+  .grafica-pastel canvas {
+    height: 220px !important;
+  }
+}
